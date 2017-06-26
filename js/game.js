@@ -112,6 +112,7 @@ function checkRoundWinner(playerPick, computerPick) {
 		computerResultElem.innerHTML = "Win!";
 		computer.score++;
 	}
+	setGamePoints();
 }
 
 function playerPick(playerPick) {
@@ -129,7 +130,23 @@ function setGamePoints() {
 	computerPointsElem.innerHTML = computer.score;
 }
 
-//Zakończenie rozgrywki-funkcja, która sprawdzi, czy któryś z graczy zdobył 10 punktów.
-function winnerPlayer () {
-	
+//Zakończenie 
+function gameOver (player.score, computer.score) {
+
+	if (computer.score >= 10 || player.score >= 10) {
+		var winnerIs;
+
+		if (computer.score >= 10) {
+		winnerIs = 'computer';
+		} else {
+			winnerIs = 'player';
+		}
+
+		gameState = gameState = 'ended';
+		setGameElements();
+	}
+		setTimeout(function () {
+			alert(winnerIs + ' won!');
+			}, 1)
+	}
 }
