@@ -2,8 +2,7 @@
 
 //ZAINICJOWANIE NOWEJ GRY
 var newGameBtn = document.getElementById('js-newGameButton');
-
-newGameBtn.addEventListener('click', newGame);
+	newGameBtn.addEventListener('click', newGame);
 
 //kliknięcie WYBORU GRACZA
 var pickRock = document.getElementById('js-playerPick_rock'),
@@ -112,7 +111,7 @@ function checkRoundWinner(playerPick, computerPick) {
 		computerResultElem.innerHTML = "Win!";
 		computer.score++;
 	}
-	setGamePoints();
+		setGamePoints();
 }
 
 function playerPick(playerPick) {
@@ -131,15 +130,19 @@ function setGamePoints() {
 }
 
 //Zakończenie 
-function gameOver (player.score, computer.score) {
-
+function gameOver () {
 	if (computer.score >= 10 || player.score >= 10) {
 		var winnerIs;
+		gameOver()
 
 		if (computer.score >= 10) {
 		winnerIs = 'computer';
-		} else {
+		gameOver()
+		}
+
+		else {
 			winnerIs = 'player';
+			gameOver()
 		}
 
 		gameState = gameState = 'ended';
@@ -148,5 +151,4 @@ function gameOver (player.score, computer.score) {
 		setTimeout(function () {
 			alert(winnerIs + ' won!');
 			}, 1)
-	}
 }
