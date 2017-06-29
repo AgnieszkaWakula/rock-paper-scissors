@@ -112,6 +112,7 @@ function checkRoundWinner(playerPick, computerPick) {
 		computer.score++;
 	}
 		setGamePoints();
+		gameOver()
 }
 
 function playerPick(playerPick) {
@@ -133,22 +134,16 @@ function setGamePoints() {
 function gameOver () {
 	if (computer.score >= 10 || player.score >= 10) {
 		var winnerIs;
-		gameOver()
-
+		
 		if (computer.score >= 10) {
 		winnerIs = 'computer';
-		gameOver()
 		}
-
 		else {
 			winnerIs = 'player';
-			gameOver()
 		}
-
 		gameState = gameState = 'ended';
 		setGameElements();
+		alert(winnerIs + ' won!');
 	}
-		setTimeout(function () {
-			alert(winnerIs + ' won!');
-			}, 1)
+
 }
